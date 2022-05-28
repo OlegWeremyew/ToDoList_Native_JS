@@ -3,7 +3,7 @@ const descriptionTaskInput = document.getElementById('description-task');
 const todosWrapper = document.querySelector('.todos-wrapper');
 
 let tasksElements;
-!localStorage.tasksElements ? tasksElements = [] : tasksElements = JSON.parse(localStorage.getItem('tasksElementsAsString'));
+!localStorage.tasksElements ? tasksElements = [] : tasksElements = JSON.parse(localStorage.getItem('tasksElements'));
 
 let toDoItemElements = [];
 
@@ -14,30 +14,37 @@ function Task(description) {
 
 const createTemplate = (task, taskIndex) => {
     return `
-         <div class="todo-item  ${tasksElements.completed ? 'checked' : ''}">
+         <div class="todo-item ${tasksElements.completed ? 'checked' : ''}">
             <div class="description">${task.description}</div>
             <div class="buttons">
                 <input onclick="completeTask(${taskIndex})" class="btn-complete" type="checkbox" ${tasksElements.completed ? 'checked' : ''}>
-                <button class="btn-delete" type="button">Delete</button>
+                <button onclick="deleteTask(${taskIndex})" class="btn-delete" type="button">Delete</button>
             </div>
         </div>
     `
 }
 
+const filterTasks = () => {
+    const activeTasks = tasksElements.length && tasksElements.filter(item => item.completed === false);
+    const completedTasks = tasksElements.length && tasksElements.filter(item => item.completed === true);
+    tasksElements = [...activeTasks, ...completedTasks];
+}
+
 const fillHtmlList = () => {
     todosWrapper.innerHTML = "";
     if (tasksElements.length) {
+        filterTasks();
         tasksElements.forEach((item, index) => {
             todosWrapper.innerHTML += createTemplate(item, index);
         });
-        toDoItemElements = document.querySelectorAll('.todo-item')
+        toDoItemElements = document.querySelectorAll('.todo-item');
     }
 }
 
 fillHtmlList();
 
 const updateLocalStorage = () => {
-    localStorage.setItem('tasksElementsAsString', JSON.stringify(tasksElements));
+    localStorage.setItem('tasksElements', JSON.stringify(tasksElements));
 }
 
 const completeTask = (taskIndex) => {
@@ -49,6 +56,15 @@ const completeTask = (taskIndex) => {
     }
     updateLocalStorage();
     fillHtmlList();
+}
+
+const deleteTask = (taskIndex) => {
+    toDoItemElements[taskIndex].classList.add('deletion');
+    setTimeout(() => {
+        tasksElements.splice(taskIndex, 1);
+        updateLocalStorage();
+        fillHtmlList();
+    }, 500);
 }
 
 addTaskBtn.addEventListener('click', () => {

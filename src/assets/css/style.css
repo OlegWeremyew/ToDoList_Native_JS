@@ -64,12 +64,12 @@ h1 {
     background-color: darkgoldenrod;
 }
 
-.todo-item.checked {
+.todo-item .checked {
     background-color: darkgrey;
     opacity: 0.5;
 }
 
-.todo-item.deletion {
+.todo-item .deletion {
     animation: opacity 1s ease-in-out;
 }
 
@@ -94,13 +94,28 @@ h1 {
 }
 
 .buttons button {
-    background-color: #981616;
+    outline: none;
+    border: none;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 5px;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .btn-complete {
-
+    background-color: rgba(57, 139, 203, 0.87);
 }
 
 .btn-delete {
-
+    background-color: rgba(98, 120, 138, 0.87);
 }
