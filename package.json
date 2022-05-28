@@ -1,21 +1,21 @@
 {
-  "name": "todolist_native_js",
+  "name": "ToDoList_Native_JS",
   "version": "1.0.0",
   "description": "ToDoListPage",
   "main": "index.js",
-  "homepage": "https://github.com/OlegWeremyew/todolist_native_js",
+  "homepage": "https://github.com/OlegWeremyew/ToDoList_Native_JS",
   "scripts": {
     "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OlegWeremyew/todolist_native_js.git"
+    "url": "git+https://github.com/OlegWeremyew/ToDoList_Native_JS.git"
   },
   "keywords": [],
   "author": "OlegWeremyew",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OlegWeremyew/todolist_native_js/issues"
+    "url": "https://github.com/OlegWeremyew/ToDoList_Native_JS/issues"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
