@@ -1,6 +1,6 @@
 const addTaskBtn = document.getElementById('add-task-btn');
 const descriptionTaskInput = document.getElementById('description-task');
-const todosWrapper = document.querySelector('.todos-wrapper');
+const todosWrapper = document.querySelector('.todos-block');
 
 let tasksElements;
 !localStorage.tasksElements ? tasksElements = [] : tasksElements = JSON.parse(localStorage.getItem('tasksElements'));
@@ -15,10 +15,10 @@ function Task(description) {
 const createTemplate = (task, taskIndex) => {
     return `
          <div class="todo-item ${tasksElements.completed ? 'checked' : ''}">
-            <div class="description">${task.description}</div>
+            <div class="description">${taskIndex + 1}. ${task.description}</div>
             <div class="buttons">
-                <input onclick="completeTask(${taskIndex})" class="btn-complete" type="checkbox" ${tasksElements.completed ? 'checked' : ''}>
-                <button onclick="deleteTask(${taskIndex})" class="btn-delete" type="button">Delete</button>
+                <input onclick="completeTask(${taskIndex})" type="checkbox" ${tasksElements.completed ? 'checked' : ''}>
+                <button onclick="deleteTask(${taskIndex})" type="button">Delete 🗑</button>
             </div>
         </div>
     `

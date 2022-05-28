@@ -9,22 +9,19 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<h1>ToDoList</h1>
-<div class="flex-wrapper">
-    <div class="add-todo-wrapper">
+<main class="main">
+    <h1>ToDoList</h1>
+    <section class="add-todo-block">
         <div class="input-wrapper">
-            <label for="description-task">write task</label>
-            <input type="text" id="description-task">
+            <input type="text" id="description-task"  placeholder="enter task description ✎">
         </div>
         <div class="button-wrapper">
             <button type="button" id="add-task-btn">Add</button>
         </div>
-    </div>
-    <h2>Tasks on day:</h2>
-    <div class="todos-wrapper">
-
-    </div>
-</div>
+    </section>
+    <h2>Tasks for today:</h2>
+    <section class="todos-block"></section>
+</main>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
