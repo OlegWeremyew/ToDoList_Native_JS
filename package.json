@@ -11,7 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/OlegWeremyew/todolist_native_js.git"
   },
-  "author": "",
+  "keywords": [],
+  "author": "OlegWeremyew",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/OlegWeremyew/todolist_native_js/issues"
