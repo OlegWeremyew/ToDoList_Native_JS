@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todolist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<main class="main">
     <h1>ToDoList</h1>
-    <div class="flex-wrapper">
-        <div class="add-todo-wrapper">
-            <div class="input-wrapper">
-                <label for="description-task">write task</label>
-                <input type="text" id="description-task">
-            </div>
-            <div class="button-wrapper">
-                <button type="button" id="add-task-btn">Add</button>
-            </div>
+    <section class="add-todo-block">
+        <div class="input-wrapper">
+            <input type="text" id="description-task"  placeholder="enter task description ✎">
         </div>
-        <h2>Tasks on day</h2>
-        <div class="todos-wrapper">
-
+        <div class="button-wrapper">
+            <button type="button" id="add-task-btn">Add</button>
         </div>
-    </div>
-    <script src="assets/js/script.js"></script>
+    </section>
+    <h2>Tasks for today:</h2>
+    <section class="todos-block"></section>
+</main>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
