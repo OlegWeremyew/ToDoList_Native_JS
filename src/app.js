@@ -19,14 +19,14 @@ function addTodo(e) {
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
   //Create list
-  const newTodo = document.createElement("li");
-  newTodo.innerText = todoInput.value;
+  const newToDo = document.createElement("li");
+  newToDo.innerText = todoInput.value;
   //Save to local - do this last
   //Save to local
   saveLocalTodos(todoInput.value);
   //
-  newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
+  newToDo.classList.add("todo-item");
+  todoDiv.appendChild(newToDo);
   todoInput.value = "";
   //Create Completed Button
   const completedButton = document.createElement("button");
@@ -51,7 +51,7 @@ function deleteTodo(e) {
     todo.classList.add("fall");
     //at the end
     removeLocalTodos(todo);
-    todo.addEventListener("transitionend", e => {
+    todo.addEventListener("transitionend", () => {
       todo.remove();
     });
   }
