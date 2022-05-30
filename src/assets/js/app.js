@@ -30,23 +30,26 @@ function addTodo(e) {
     //Prevent natural behaviour
     e.preventDefault();
 
-    //Create todo div
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
+    if (todoInput.value.trim()) {
 
-    //Create list
-    const newToDo = document.createElement("li");
-    newToDo.innerText = todoInput.value;
+        //Create todo div
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo");
 
-    //Save to local
-    saveLocalTodos(todoInput.value);
+        //Create list
+        const newToDo = document.createElement("li");
+        newToDo.innerText = todoInput.value;
 
-    CreateTodoItemInList(todoDiv, newToDo);
-    createCompletedButton(todoDiv);
-    createTrashButton(todoDiv);
+        //Save to local
+        saveLocalTodos(todoInput.value);
 
-    //attach final Todo
-    todoList.appendChild(todoDiv);
+        CreateTodoItemInList(todoDiv, newToDo);
+        createCompletedButton(todoDiv);
+        createTrashButton(todoDiv);
+
+        //attach final Todo
+        todoList.appendChild(todoDiv);
+    }
 }
 
 function deleteTodo(e) {

@@ -36,8 +36,7 @@ form button {
     color: #ff6f47;
     background: #f7fffe;
     cursor: pointer;
-    margin-left: -5px;
-    transition: all 0.3s ease;
+    margin-left: -4px;
     border-radius: 0 5px 5px 0;
 }
 
@@ -45,9 +44,16 @@ form input:focus {
     outline: none;
 }
 
-form button:hover {
+form button:not([disabled]):hover {
     background: #ff6f47;
     color: white;
+    transition: all 0.2s ease;
+}
+
+form input:disabled, button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transition: none;
 }
 
 h2 {
@@ -80,11 +86,6 @@ h2 {
     cursor: pointer;
 }
 
-.readonly-mode:focus {
-    border-color: #a8792f;
-    color: #333333;
-}
-
 .todo-container {
     display: flex;
     justify-content: center;
@@ -101,6 +102,7 @@ h2 {
     background: white;
     font-size: 1.5rem;
     color: #333;
+    padding-left: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -184,6 +186,11 @@ select {
     border-radius: 5px 5px 0 0;
 }
 
+select:disabled, select:disabled:after {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 select {
     color: #ff6f47;
     font-family: "Poppins", sans-serif;
@@ -233,12 +240,16 @@ option:checked {
     margin-bottom: 10px;
 }
 
-.clear-list-btn:hover {
+.clear-list-btn:not([disabled]):hover {
     background-color: #fff;
     color: #ff6f47;
     transition: all 0.2s ease;
 }
 
+.clear-list-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 
 @media (max-width: 800px) {
 

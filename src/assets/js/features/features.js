@@ -1,25 +1,25 @@
 //Features
-function createCompletedButton (todoDiv) {
+function createCompletedButton(todoDiv) {
     const completedButton = document.createElement("button");
     completedButton.innerHTML = `<i class="fas fa-check"></i>`;
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton);
 }
 
-function createTrashButton (todoDiv) {
+function createTrashButton(todoDiv) {
     const trashButton = document.createElement("button");
     trashButton.innerHTML = `<i class="fas fa-trash"></i>`;
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
 }
 
-function CreateTodoItemInList (todoDiv, newTodo) {
+function CreateTodoItemInList(todoDiv, newTodo) {
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
     todoInput.value = "";
 }
 
-function readOnlyChangeMode(modeValue){
+function readOnlyChangeMode(modeValue) {
     if (!modeValue) {
         todoInput.setAttribute("disabled", "disabled");
         todoButton.setAttribute("disabled", "disabled");
