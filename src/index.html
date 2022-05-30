@@ -16,8 +16,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
 
     <link
       rel="stylesheet"
@@ -32,10 +30,12 @@
       <h1>ToDoList</h1>
     </header>
     <form>
-      <input type="text" class="todo-input" placeholder="task description ✎"/>
-      <button class="todo-button" type="submit">
-        <i class="fas fa-plus-square"></i>
-      </button>
+      <div>
+        <input type="text" class="todo-input" placeholder="task description ✎"/>
+        <button class="todo-button" type="submit">
+          <i class="fas fa-plus-square"></i>
+        </button>
+      </div>
       <div class="select">
         <select name="todos" class="filter-todo">
           <option value="all">All</option>
@@ -45,9 +45,9 @@
       </div>
     </form>
     <h2>Task for today</h2>
-    <div class="todo-container">
+    <section class="todo-container">
       <ul class="todo-list"></ul>
-    </div>
+    </section>
 
     <script src="assets/app.js"></script>
   </body>
