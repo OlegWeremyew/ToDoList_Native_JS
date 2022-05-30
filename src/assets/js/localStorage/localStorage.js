@@ -21,6 +21,10 @@ function removeLocalTodos(todo) {
     localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+function cleanListLocal() {
+    localStorage.setItem("todos", JSON.stringify([]));
+}
+
 function getTodos() {
     let todos;
     if (localStorage.getItem("todos") === null) {

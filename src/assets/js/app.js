@@ -3,12 +3,14 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
+const clearListButton = document.querySelector(".clear-list-btn");
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
+clearListButton.addEventListener("click", clearList)
 
 //Functions
 function addTodo(e) {
@@ -58,7 +60,7 @@ function deleteTodo(e) {
 
 function filterTodo(e) {
     const todos = todoList.childNodes;
-    todos.forEach(function(todo) {
+    todos.forEach(function (todo) {
         switch (e.target.value) {
             case "all":
                 todo.style.display = "flex";
@@ -80,3 +82,9 @@ function filterTodo(e) {
     });
 }
 
+function clearList() {
+    while (todoList.firstChild) {
+        todoList.removeChild(todoList.firstChild);
+    }
+    cleanListLocal();
+}
