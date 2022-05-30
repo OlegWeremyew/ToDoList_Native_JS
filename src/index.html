@@ -25,10 +25,17 @@
   />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
+
   <body>
     <header>
       <h1>ToDoList</h1>
     </header>
+
+    <section class="mode-container">
+      <label class="readonly-mode-label"  for="readonly-mode">Readonly mode:</label>
+      <input class="readonly-mode-input" id="readonly-mode" type="checkbox" name="readonly-mode" checked>
+    </section>
+
     <form>
       <div>
         <input type="text" class="todo-input" placeholder="task description ✎"/>
@@ -37,16 +44,17 @@
         </button>
       </div>
       <div class="select">
-        <select name="todos" class="filter-todo">
+        <select name="filter-select" class="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
         </select>
       </div>
     </form>
+
     <section class="todo-header">
       <h2>Task for today 📋</h2>
-      <button  class="clear-list-btn" type="button">Clear list</button>
+        <button  class="clear-list-btn" type="button">Clear list</button>
     </section>
     <section class="todo-container">
       <ul class="todo-list"></ul>

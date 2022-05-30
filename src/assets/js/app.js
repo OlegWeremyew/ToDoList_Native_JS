@@ -4,15 +4,28 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 const clearListButton = document.querySelector(".clear-list-btn");
+const readonlyModeCheckbox = document.querySelector(".readonly-mode-input");
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
+document.addEventListener("DOMContentLoaded", getFilterTodoValue);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
 clearListButton.addEventListener("click", clearList)
+readonlyModeCheckbox.addEventListener('click', changeMode);
 
-//Functions
+//ReadonlyMode
+const readonlyMode = getReadonlyMode();
+readonlyModeCheckbox.checked = readonlyMode
+readOnlyChangeMode(readonlyModeCheckbox.checked);
+
+//Function
+function changeMode() {
+    setReadonlyMode(readonlyModeCheckbox.checked);
+    readOnlyChangeMode(readonlyModeCheckbox.checked);
+}
+
 function addTodo(e) {
     //Prevent natural behaviour
     e.preventDefault();
@@ -64,10 +77,14 @@ function filterTodo(e) {
         switch (e.target.value) {
             case "all":
                 todo.style.display = "flex";
+                //Save to local
+                setFilterTodoValue("all")
                 break;
             case "completed":
                 if (todo.classList.contains("completed")) {
                     todo.style.display = "flex";
+                    //Save to local
+                    setFilterTodoValue("completed")
                 } else {
                     todo.style.display = "none";
                 }
@@ -75,6 +92,8 @@ function filterTodo(e) {
             case "uncompleted":
                 if (!todo.classList.contains("completed")) {
                     todo.style.display = "flex";
+                    //Save to local
+                    setFilterTodoValue("uncompleted")
                 } else {
                     todo.style.display = "none";
                 }
@@ -86,5 +105,6 @@ function clearList() {
     while (todoList.firstChild) {
         todoList.removeChild(todoList.firstChild);
     }
+    //Save to local
     cleanListLocal();
 }

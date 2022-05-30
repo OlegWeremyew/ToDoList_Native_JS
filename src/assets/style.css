@@ -56,6 +56,35 @@ h2 {
     margin-bottom: 15px;
 }
 
+.mode-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    width: 185px;
+    margin: 0 auto;
+}
+
+.readonly-mode-label {
+    cursor: pointer;
+}
+
+.readonly-mode-label:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.readonly-mode-input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.readonly-mode:focus {
+    border-color: #a8792f;
+    color: #333333;
+}
+
 .todo-container {
     display: flex;
     justify-content: center;
@@ -250,6 +279,11 @@ option:checked {
 
     header {
         font-size: 1.2rem;
+        min-height: 10vh;
+    }
+
+    .mode-container {
+        margin-bottom: 15px;
     }
 
     form {

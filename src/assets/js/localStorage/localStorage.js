@@ -25,6 +25,26 @@ function cleanListLocal() {
     localStorage.setItem("todos", JSON.stringify([]));
 }
 
+function setFilterTodoValue(filterValue) {
+    localStorage.setItem("filter", JSON.stringify(filterValue));
+}
+
+function setReadonlyMode(checked) {
+    localStorage.setItem("checked", JSON.stringify(checked));
+}
+
+function getFilterTodoValue() {
+    return JSON.parse(localStorage.getItem("filter"));
+}
+
+function getReadonlyMode() {
+    if (localStorage.getItem("checked") === null) {
+        return true
+    } else {
+        return JSON.parse(localStorage.getItem("checked"));
+    }
+}
+
 function getTodos() {
     let todos;
     if (localStorage.getItem("todos") === null) {
@@ -32,7 +52,7 @@ function getTodos() {
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
-    todos.forEach(function(todo) {
+    todos.forEach(function (todo) {
 
         //Create todo div
         const todoDiv = document.createElement("div");

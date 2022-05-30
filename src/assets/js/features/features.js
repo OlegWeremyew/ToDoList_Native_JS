@@ -18,3 +18,17 @@ function CreateTodoItemInList (todoDiv, newTodo) {
     todoDiv.appendChild(newTodo);
     todoInput.value = "";
 }
+
+function readOnlyChangeMode(modeValue){
+    if (!modeValue) {
+        todoInput.setAttribute("disabled", "disabled");
+        todoButton.setAttribute("disabled", "disabled");
+        clearListButton.setAttribute("disabled", "disabled");
+        filterOption.setAttribute("disabled", "disabled");
+    } else {
+        todoInput.removeAttribute("disabled");
+        todoButton.removeAttribute("disabled");
+        clearListButton.removeAttribute("disabled");
+        filterOption.removeAttribute("disabled");
+    }
+}
