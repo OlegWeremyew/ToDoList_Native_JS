@@ -25,8 +25,9 @@ form {
 
 form input,
 form button {
-    padding: 0.5rem;
-    font-size: 2rem;
+
+    padding: 3px 5px 0;
+    font-size: 40px;
     border: none;
     background: white;
     border-radius: 5px 0 0 5px;
@@ -62,7 +63,7 @@ h2 {
 }
 
 .todo-list {
-    min-width: 30%;
+    min-width: 40%;
     list-style: none;
 }
 
@@ -80,6 +81,7 @@ h2 {
 
 .filter-todo {
     padding: 1rem;
+    font-size: 17px;
 }
 
 .todo li {
@@ -116,7 +118,7 @@ h2 {
 }
 
 .todo-item {
-    padding: 0rem 0.5rem;
+    padding: 0 0.5rem;
 }
 
 .fa-trash,
@@ -138,7 +140,6 @@ h2 {
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    -ms-appearance: none;
     appearance: none;
     outline: 0;
     box-shadow: none;
@@ -171,12 +172,17 @@ select {
     background: #ff6f47;
     cursor: pointer;
     pointer-events: none;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 0 0;
 }
 
-/* Transition */
-/*
 .select:hover::after {
-  transform: scale(1.5);
+    border-left: 2px solid  #ff6f47;
+    background-color: #fff;
+    color: #ff6f47;
+    transition: all 0.2s ease;
 }
-*/
+
+option:checked {
+    background-color: #ff6f47;
+    color: #fff;
+}
