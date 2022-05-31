@@ -25,6 +25,7 @@ function readOnlyChangeMode(modeValue) {
         todoButton.setAttribute("disabled", "disabled");
         clearListButton.setAttribute("disabled", "disabled");
         filterOption.setAttribute("disabled", "disabled");
+        filterOption.setAttribute("disabled", "disabled");
     } else {
         todoInput.removeAttribute("disabled");
         todoButton.removeAttribute("disabled");
