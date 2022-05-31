@@ -264,7 +264,6 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    content: "\25BC";
     position: absolute;
     height: 100%;
     width: 2.5rem;
@@ -274,6 +273,7 @@ select {
     cursor: pointer;
     pointer-events: none;
     border-radius: 0 5px 0 0;
+    font-size: 20px;
 }
 
 .filter-todo:not([disabled]) + .after-select {
@@ -348,7 +348,7 @@ option:checked {
         font-size: 14px;
     }
 
-    .select::after {
+    .after-select {
         padding: 0.5rem;
     }
 
