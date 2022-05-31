@@ -17,4 +17,4 @@ Set the mode to "Readonly" by toggling the value of the checkbox labeled "Readon
 Activating the mode will disable the ability to add new tasks, clear the list and use filtering.
 The possibility of a single deletion and change of status remains.
 
-Link to GitGub-pages  : 
+Link to GitGub-pages  https://olegweremyew.github.io/ToDoList_Native_JS/: 
