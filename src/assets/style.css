@@ -247,7 +247,7 @@ select {
     border-radius: 5px 5px 0 0;
 }
 
-select:disabled, select:disabled:after {
+select:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
@@ -275,7 +275,7 @@ select {
 .select:hover::after {
     background-color: #fff;
     color: #ff6f47;
-    border-right: 1px solid #ff6f47;
+    border-right: 2px solid #ff6f47;
     transform: rotate(-180deg);
     transition: all 0.7s linear;
 }
