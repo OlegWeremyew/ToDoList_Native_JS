@@ -5,10 +5,10 @@ const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 const clearListButton = document.querySelector(".clear-list-btn");
 const readonlyModeCheckbox = document.querySelector(".readonly-mode-input");
+document.querySelector("select#mySelectValue").value = getFilterTodoValue();
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
-document.addEventListener("DOMContentLoaded", getFilterTodoValue);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
@@ -87,19 +87,19 @@ function filterTodo(e) {
                 if (todo.classList.contains("completed")) {
                     todo.style.display = "flex";
                     //Save to local
-                    setFilterTodoValue("completed")
                 } else {
                     todo.style.display = "none";
                 }
+                setFilterTodoValue("completed")
                 break;
             case "uncompleted":
                 if (!todo.classList.contains("completed")) {
                     todo.style.display = "flex";
                     //Save to local
-                    setFilterTodoValue("uncompleted")
                 } else {
                     todo.style.display = "none";
                 }
+                setFilterTodoValue("uncompleted")
         }
     });
 }
