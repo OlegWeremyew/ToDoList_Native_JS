@@ -30,7 +30,7 @@ function setFilterTodoValue(filterValue) {
 }
 
 function setReadonlyMode(checked) {
-    localStorage.setItem("checked", JSON.stringify(checked));
+    localStorage.setItem("readonly", JSON.stringify(checked));
 }
 
 function getFilterTodoValue() {
@@ -38,10 +38,8 @@ function getFilterTodoValue() {
 }
 
 function getReadonlyMode() {
-    if (localStorage.getItem("checked") === null) {
-        return true
-    } else {
-        return JSON.parse(localStorage.getItem("checked"));
+    if (localStorage.getItem("readonly")) {
+        return JSON.parse(localStorage.getItem("readonly"));
     }
 }
 

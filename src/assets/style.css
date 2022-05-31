@@ -36,7 +36,7 @@ form button {
     color: #ff6f47;
     background: #f7fffe;
     cursor: pointer;
-    margin-left: -4px;
+    margin-left: -5px;
     border-radius: 0 5px 5px 0;
 }
 
@@ -93,7 +93,7 @@ h2 {
 }
 
 .todo-list {
-    min-width: 40%;
+    min-width: 600px;
     list-style: none;
 }
 
@@ -272,7 +272,7 @@ option:checked {
     }
 
     .todo-list {
-        min-width: 50%;
+        min-width: 70%;
     }
 
     .filter-todo {

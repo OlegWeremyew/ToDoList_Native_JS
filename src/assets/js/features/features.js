@@ -20,7 +20,7 @@ function CreateTodoItemInList(todoDiv, newTodo) {
 }
 
 function readOnlyChangeMode(modeValue) {
-    if (!modeValue) {
+    if (modeValue) {
         todoInput.setAttribute("disabled", "disabled");
         todoButton.setAttribute("disabled", "disabled");
         clearListButton.setAttribute("disabled", "disabled");
