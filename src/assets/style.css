@@ -200,7 +200,7 @@ h2:hover {
 }
 
 .complete-btn:hover {
-    background: #099876;
+    background: #088165;
     transition: background-color 0.3s linear;
 }
 
@@ -260,24 +260,28 @@ select {
 }
 
 /* Arrow */
-.select::after {
+.after-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     content: "\25BC";
     position: absolute;
+    height: 100%;
+    width: 2.5rem;
     top: 0;
     right: 0;
-    padding: 0.8rem;
-    background: #ff6f47;
+    z-index: 1;
     cursor: pointer;
     pointer-events: none;
     border-radius: 0 5px 0 0;
 }
 
-.select:hover::after {
-    background-color: #fff;
+.filter-todo:not([disabled]) + .after-select {
+    background-color: #ff6f47;
+}
+
+.filter-todo:disabled + .after-select {
     color: #ff6f47;
-    border-right: 2px solid #ff6f47;
-    transform: rotate(-180deg);
-    transition: all 0.7s linear;
 }
 
 option:checked {
